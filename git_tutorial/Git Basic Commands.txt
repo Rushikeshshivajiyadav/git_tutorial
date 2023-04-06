@@ -1,4 +1,7 @@
 Git and github -
+
+		1)	git is version control system VCS
+		2) 	Source code Management SCM
 GIT TUTORIAL -
 1) Install Git -
 		download git
@@ -20,9 +23,12 @@ GIT TUTORIAL -
 		3) git add -
 				git add .
 				git add abc.txt xyz.txt
-		4) congiguration -
+		4) configuration -
 			1) git config --global user.email "rushikeshyadav827@gmail.com"
 			2) git config --global user.name "rushikesh"
+			3) git config --list
+			
+			 git remote -v
 			
 		5) git commit -m "Git Basic commands"
 		6) git commit -a -m "modify file"  - working on only tracked files
