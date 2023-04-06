@@ -28,7 +28,44 @@ GIT TUTORIAL -
 			2) git config --global user.name "rushikesh"
 			3) git config --list
 			
-			 git remote -v
+			1)  git remote add origin https://github.com/Rushikeshshivajiyadav/git_tutorial.git
+			2)	git remote -v
+			
+				origin  https://github.com/Rushikeshshivajiyadav/git_tutorial.git (fetch)
+				origin  https://github.com/Rushikeshshivajiyadav/git_tutorial.git (push)
+				
+				change the Https to SSH -
+				
+				 git remote set-url origin git@github.com:Rushikeshshivajiyadav/git_tutorial.git
+				 
+				 $ git remote -v
+					origin  git@github.com:Rushikeshshivajiyadav/git_tutorial.git (fetch)
+					origin  git@github.com:Rushikeshshivajiyadav/git_tutorial.git (push)
+					
+					
+			Enter file in which to save the key (/c/Users/HP/.ssh/id_rsa):
+			/c/Users/HP/.ssh/id_rsa already exists.
+			Overwrite (y/n)? y
+			Enter passphrase (empty for no passphrase):
+			Enter same passphrase again:
+			Your identification has been saved in /c/Users/HP/.ssh/id_rsa
+			Your public key has been saved in /c/Users/HP/.ssh/id_rsa.pub
+			The key fingerprint is:
+			SHA256:dXej0AyDoMZvJopk+F+Al7fvUDK+WrfE3OgJaJ33+wI HP@DESKTOP-QHL5FM6
+			The key's randomart image is:
+			+---[RSA 3072]----+
+			|       .. .o     |
+			|    . .  .  =    |
+			|     +    ...o...|
+			|.  ....  . ......|
+			|.o. +.++S    .   |
+			|o....*+OEo       |
+			| ...o X B..      |
+			|   o o X +.      |
+			|    o...* o+.    |
+			+----[SHA256]-----+
+
+
 			
 		5) git commit -m "Git Basic commands"
 		6) git commit -a -m "modify file"  - working on only tracked files
