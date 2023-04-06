@@ -1,0 +1,213 @@
+Git and github -
+GIT TUTORIAL -
+1) Install Git -
+		download git
+		https://git-scm.com/downloads
+		run as Administrator - install 
+		
+		git bash command prompt -
+		- ls 
+		- clear
+		- pwd 
+		- cat file.txt
+		- git --version 
+		
+		
+		
+		git command -
+		1) git init -
+		2) git status -
+		3) git add -
+				git add .
+				git add abc.txt xyz.txt
+		4) congiguration -
+			1) git config --global user.email "rushikeshyadav827@gmail.com"
+			2) git config --global user.name "rushikesh"
+			
+		5) git commit -m "Git Basic commands"
+		6) git commit -a -m "modify file"  - working on only tracked files
+		7) git log
+		   git log --oneline
+		
+		
+		8) git diff -
+			1) Compare working directory with stagging area -
+					$ git diff text.txt
+					warning: LF will be replaced by CRLF in text.txt.
+					The file will have its original line endings in your working directory
+					diff --git a/text.txt b/text.txt
+					index e965047..557db03 100644
+					--- a/text.txt
+					+++ b/text.txt
+					@@ -1 +1 @@
+					-Hello
+					+Hello World
+					
+					
+					a/text.txt	-	represent source (stagging area)
+					b/text.txt	-	represent destination (working directory)
+					e965047		-  	hash of file content of source/stagging
+					557db03		-	hash of file content of destination/working
+					100644		- git file mode
+								100 - represent type of file
+								644 - file permissions rw r r
+								4 - r
+								2 - w
+								1 - e
+								
+					--- a/text.txt - Source file missing some lines (stagging)
+					+++ b/text.txt - New lines added in destination file (working directory)
+					
+					-Hello
+					+Hello World 
+							- if anyline prefixed with space means it is unchanged
+							- if anyline prefixed with + means it is added in destination copy
+							- if anyline prefixed with - means it is removed from destination copy
+			
+			
+			2) Compare working directory with local repository -
+					git diff HEAD text.txt
+					
+			3) Compare stagging area with local repository -
+					git diff --staged HEAD text.txt
+			
+			4) Compare working directory with specific commit in local repository -
+					git log --oneline
+					git diff d0ff720 text.txt
+			
+			5) Compare stagging area with specific commit in local repository -
+					git diff --staged d0ff720 
+					
+			6) Compare one commit to specific commit in local repository -
+					git diff d0ff720 bb859a8 text.txt
+					
+			7) Compare in content between two branches 
+					git diff master test 
+					
+			8) Compare in content between local repository and remote repository branches 
+					git diff master origin/master
+
+			
+			
+			
+		9) git ls-files
+		
+		10) Git rm command -
+				1) remove files from both stagging area and working directory
+					 git rm file3.txt.txt
+					 git rm -r .
+					 
+				2) remove files from stagging area 
+					git rm --cached file.txt
+					
+				3) remove files only working directory
+					rm file3.txt
+					
+					
+		11) git checkout command -
+				we can use checkout command to discart unstaged changes in the tracked files of working directory
+				
+				1) only for working directory
+				2) to discart unstaged changes (the changes which àre not added to stagging area)
+				3) In the tracked files (the files are already added to stagging area`/commit)
+				
+				git checkout -- text.txt
+
+		12) git reset command -
+				1) to remove changes from staging area
+					git reset file.txt
+					
+				2) to undo commits at repository level -
+					
+					- Moves the HEAD to the specified commit, and all remaining recent commits will be removed
+					- mode will decide whether those changes are going to remove from staging area and working directory or not
+					
+					--mixed 
+					--soft 
+					--hard
+					
+					1) reset with --mixed mode -
+							it is the default mode
+							to discard commits in the local repository and to discard changes in the staging area 
+							it will not touch working directory
+							
+							git log --oneline
+							git reset --mixed <previous Commit Id>
+					
+					2) reset with --soft mode -
+							It is exactly same as --mixed mode option, but changes are available in working directory as well as staging are
+							It won't touch working directory and staging area
+							As changes already present in stagging area, just we have to use commit to revert back
+							
+							git log --oneline
+							git reset --soft <previous Commit Id>
+
+
+					3) reset with --hard mode -
+							It is exactly same as --mixed except that changes will be removed from everywhere (local repository, staging area and working directory)
+							It is imposible to revert back and hence while using hard reset we have to take special care
+							
+							git log --oneline
+							git reset --hard <previous Commit Id>
+							
+							
+							
+							
+		12) Git Branching -
+				1) to view available branches
+					git branch
+					
+				2) create new branch -
+					git branch branch1
+					
+				3) switch to from one branch to another branch -
+					git checkout - discard unstaged changes in working directory
+					
+					git checkout branch1 
+					
+				4) creating & switching to branch -
+					git checkout -b branch2
+					
+		
+		13) Merging -
+				1) fast-forward merge -
+						master - a.txt b.txt
+						feature - x.txt y.txt
+						
+					Master -
+						git merge feature
+						
+						
+				2) three-way merge - (recurcive strategy)
+						master - 2 files 2 commit
+						feature - 4 files 4 commit
+						master - 1 files 1 commit
+						
+					Master -
+						git merge feature
+						
+					new commit created by git at the time of merge point to HEAD
+					
+				git branch -d feature 
+				
+				
+				
+		
+		
+		14) rebase command -
+				git checkout feature
+				git rebase master
+				git log --oneline master
+				git log --oneline feature
+				git checkout master
+				git merge feature
+				git log --oneline --graph
+				
+				
+				
+				
+		15) create github account -
+				1) create new repository -
+					remote repository URL -
+							https://github.com/Rushikeshshivajiyadav/git_tutorial.git
+				
